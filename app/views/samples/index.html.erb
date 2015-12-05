@@ -1,9 +1,16 @@
 <% @samples.each do |sample| %>
 	<h2 class="name"><%= link_to sample.name, sample.link %></h2>
 	<p class="description"><%= sample.description %></p>
-	<%= link_to 'Edit', edit_sample_path(sample) %>
-	<%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% if user_signed_in? %>
+		<%= link_to 'Edit', edit_sample_path(sample) %>
+		<%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
 <% end %>
 <br>
 <br>
-<%= link_to 'Create New Sample', new_sample_path %> 
+<% if user_signed_in? %>
+	<%= link_to 'Create New Sample', new_sample_path %><br>
+	<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<% else %>
+	<%= link_to "Admin Login", new_user_session_path %>  <!-- I will probably add this to layouts/application once I get into styling. for sure it will not be here. -->
+<% end %>
