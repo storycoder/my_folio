@@ -1,6 +1,5 @@
 <% @samples.each do |sample| %>
-	<h2 class="name"><%= sample.name %></h2>
-	<p class="link"><%= sample.link %></p>
+	<h2 class="name"><%= link_to sample.name, href="sample.link" %></h2>
 	<p class="description"><%= sample.description %></p>
 	<%= link_to 'Edit', edit_sample_path(sample) %>
 	<%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' } %>
