@@ -16,8 +16,29 @@
 
 </head>
 <body>
-
-<%= yield %>
+<div class="header clearfix">
+	<div class="pic col">
+		<%= image_tag('rooftop.png', :class => "centerpiece") %>
+	</div>
+	<div class="about col">
+			Welcome to my portfolio of web applications and related work. In it you will find some of my favorite projects. I'm interested in landing a career as a web application developer and hope this will be a helpful resource to anyone interested in hiring me.
+	</div>
+</div>
+<ul class="login">
+		<% if user_signed_in? %>
+			<li><%= link_to 'Create New Sample', new_sample_path, style: 'color: #000d33;' %><br></li>
+			<li><%= link_to 'Sign out', destroy_user_session_path, method: :delete, style: 'color: #000d33;' %></li>
+		<% end %>
+</ul>
+<div class="wrapper">
+	<%= yield %>
+</div>	
+<div class="footer">
+	<h3>Talk to Me</h3>
+	<ul>
+		<li><%= link_to "LinkedIn", href="http://LinkedIn.com/in/josephmargolis" %></li>
+	</ul>
+</div>
 
 </body>
 </html>
