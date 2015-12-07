@@ -1,7 +1,7 @@
 
 <div class="wrapper">
 	<% @samples.each do |sample| %>
-		<h2 class="name"><%= link_to sample.name, sample.link, {:style=>'color: red;', :class => "css_class"} %></h2>
+		<h2 class="name"><%= link_to sample.name, sample.link, {:style=>'color: #FF6666;', :class => "css_class"} %></h2>
 		<p class="description"><%= sample.description %></p>
 		<div class="modify">
 			<% if user_signed_in? %>
@@ -14,9 +14,9 @@
 	<br>
 	<br>
 	<% if user_signed_in? %>
-		<%= link_to 'Create New Sample', new_sample_path %><br>
-		<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+		<%= link_to 'Create New Sample', new_sample_path, style: 'color: #FF6666;' %><br>
+		<%= link_to 'Sign out', destroy_user_session_path, method: :delete, style: 'color: #FF6666' %>
 	<% else %>
-		<%= link_to "Admin Login", new_user_session_path %>  <!-- I will probably add this to layouts/application once I get into styling. for sure it will not be here. -->
+		<%= link_to "Admin Login", new_user_session_path, style: 'color: #FF6666;' %>  <!-- I will probably add this to layouts/application once I get into styling. for sure it will not be here. -->
 	<% end %>
 </div>
