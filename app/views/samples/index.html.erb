@@ -1,12 +1,14 @@
 
 <div class="wrapper">
 	<% @samples.each do |sample| %>
-		<h2 class="name"><%= link_to sample.name, sample.link %></h2>
+		<h2 class="name"><%= link_to sample.name, sample.link, {:style=>'color: red;', :class => "css_class"} %></h2>
 		<p class="description"><%= sample.description %></p>
-		<% if user_signed_in? %>
-			<%= link_to 'Edit', edit_sample_path(sample) %> | 
-			<%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' } %>
-		<% end %>
+		<div class="modify">
+			<% if user_signed_in? %>
+				<%= link_to 'Edit', edit_sample_path(sample), {:style=>'color:#FF6666;', :class => "css_class"} %> | 
+				<%= link_to 'Destroy', sample, style: 'color:#FF6666;', method: :delete, data: { confirm: 'Are you sure?' } %>
+			<% end %>
+		</div>
 	<% end %>
 
 	<br>
