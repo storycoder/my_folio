@@ -14,6 +14,10 @@ class SamplesController < ApplicationController
 		@sample = Sample.find(params[:id])
 	end
 
+	def edit
+		@sample = Sample.find(params[:id])
+	end
+
 	def create
 		@sample = Sample.new(sample_params)
 
@@ -27,7 +31,7 @@ class SamplesController < ApplicationController
 	def update
 		@sample = Sample.find(params[:id])
 
-		if @sample.update(post_params)
+		if @sample.update(params[:sample].permit(:name, :link, :description))
 			redirect_to samples_url, notice: 'Post Updated'
 		else
 			render :edit
