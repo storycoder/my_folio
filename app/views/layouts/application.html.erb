@@ -23,6 +23,14 @@
 	<div class="about col">
 			Welcome to my portfolio of web applications and related work. In it you will find some of my favorite projects. I'm interested in landing a career as a web application developer and hope this will be a helpful resource to anyone interested in hiring me.
 	</div>
+	<div class="contact">
+	  <ul>
+	    <li><a href="http://linkedin.com/in/josephmargolis">LinkedIn</a></li>
+	    <li><a href="http://github.com/storycoder">Github</a></li>
+	    <li><a href="mailto:meetjosephmargolis@gmail.com">Email Me</a></li>
+	  </ul>
+	</div>
+
 </div>
 <ul class="login">
 		<% if user_signed_in? %>
@@ -33,12 +41,5 @@
 <div class="wrapper">
 	<%= yield %>
 </div>	
-<div class="footer">
-	<h3>Talk to Me</h3>
-	<ul>
-		<li><%= link_to "LinkedIn", href="http://LinkedIn.com/in/josephmargolis" %></li>
-	</ul>
-</div>
-
 </body>
 </html>

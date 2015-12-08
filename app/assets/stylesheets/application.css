@@ -14,10 +14,7 @@
  *= require_self
  */
 
- ul li {
- 	margin-right: 10px;
- }
- .header {
+.header {
  	background: #000d33;
  }
 
@@ -27,15 +24,14 @@
 	font-size: 20px;
 	margin-left: 100px;
 	margin-right: 100px;
-	margin-bottom: 5px;
-
+	margin-bottom: 10px;
 }
 
 .centerpiece {
 	border-radius: 38%;
 	width: 250px;
 	display: block;
-	margin-top: 30px;
+	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 5px;
@@ -44,9 +40,33 @@
 	-webkit-filter: grayscale(1);
 }
 
+.contact {
+	text-align: center;
+	color: #000d33;
+}
+
+.contact li {
+	background: #FFFFFF;
+	display: inline-block;
+	margin-left: 50px;
+	margin-right: 50px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-size: 20px;
+	font-family: courier;
+	border-radius: 10px;
+}
+
+.contact a {
+	color: #000d33;
+}
+
  .login {
  	text-align: right;
  	display: inline;
+ 	font-family: courier;
  }
 
  .clearfix::after {
